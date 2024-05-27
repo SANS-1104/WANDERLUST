@@ -1,0 +1,81 @@
+.d-f{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar .nav .logo img{
+    width: 15rem;
+    height: 3rem;
+}
+.navbar{
+    border-bottom: 2px solid black;
+}
+
+.navbar .nav{
+    justify-content: space-between;
+    margin: 1rem 4rem;
+}
+
+.navbar .nav .find a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo , .login{
+    width: 20%;
+    justify-content: center;
+    text-align: center;
+}
+.find{
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 4rem;
+}
+.login{
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 1rem;
+    margin-right: 2rem;
+}
+.logs-signs{
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+    height: 2rem;
+}
+
+
+.logs-signs .ham a, .logs-signs .img-per a{
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.abyh a{
+    text-decoration: none;
+    color: black;
+}
+
+.addguests input{
+    border: 2px solid black;
+    border-radius: 2rem;
+}
+.hamburger-width{
+    margin-right: -300px;
+}
+
+@media (max-width : 1130px) {
+    .login{
+        visibility:collapse;
+    }
+    .hamburger-width{
+        margin-right: 2rem;
+        padding-top: 2rem;
+        font-size: larger;
+    }
+}

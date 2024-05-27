@@ -1,0 +1,23 @@
+<% layout("/layouts/navbar") %>
+<body>
+    <h2>Create a New Listing</h2>
+    <form action="/listings" method="post">
+        <label for="title">Enter Listing Title</label>
+        <input type="text" name="listing[title]" id="title" placeholder="Enter Title" required>
+        <br><br>
+        <label for="description">Description</label><br>
+        <textarea name="listing[description]" id="description" cols="30" rows="10" required></textarea>
+        <br><br>
+        <label for="img">Enter image Link</label>
+        <input type="text" name="listing[img]" id="img" placeholder="image link here">
+        <label for="price">Enter Price</label>
+        <input type="number" name="listing[price]" id="price" placeholder="Enter price" required>
+        <br><br>
+        <label for="location">Enter location</label>
+        <input type="text" name="listing[location]" id="location" placeholder="location" required>
+        <label for="country">Enter Country</label>
+        <input type="text" name="listing[country]" id="country" placeholder="Enter country" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
