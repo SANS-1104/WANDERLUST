@@ -31,8 +31,9 @@ app.listen(port, () =>{
 });
 
 app.get("/", async(req,res) =>{
-    const allListings = await Listing.find();
-    res.render("listings/index.ejs",{allListings});
+    // res.send("Welcome to WanderLust")
+    // const allListings = await Listing.find();
+    res.render("listings/home.ejs");
 });
 
 // app.get("/test",async (req,res)=>{
