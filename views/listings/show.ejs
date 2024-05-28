@@ -1,17 +1,20 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-    <h3>Listing Details</h3>
-    <ol>
-        <li><%=x.title %></li>
-        <li><%=x.description %></li>
-        <li>&#8377;<%=x.price.toLocaleString("en-IN") %></li>
-        <li><%=x.location %></li>
-        <li><%=x.country %></li>
-        <br>
-        <a href="/listings/<%=x._id %>/edit">Edit This Listing</a> 
-        <a href="/listings">Go to All Listings</a><br><br>
-        <form action="/listings/<%= x._id %>?_method=DELETE" method="post">
-            <button type="submit">Delete This Listing</button>
-        </form>
-    </ol>
+    <div class="desc-show">
+        <h3>Listing Details</h3>
+        <ol>
+            <li><%=x.title %></li>
+            <li><%=x.description %></li>
+            <li>&#8377;<%=x.price.toLocaleString("en-IN") %></li>
+            <li><%=x.location %></li>
+            <li><%=x.country %></li>
+            <br>
+            <a href="/listings/<%=x._id %>/edit">Edit This Listing</a> 
+            <a href="/listings">Go to All Listings</a><br><br>
+            <form action="/listings/<%= x._id %>?_method=DELETE" method="post">
+                <button type="submit">Delete This Listing</button>
+            </form>
+        </ol>
+    </div>
+    
 </body>

@@ -1,3 +1,9 @@
+body{
+    overflow-x:hidden;
+    font-family: "Plus Jakarta Sans", sans-serif;;
+}
+
+/* NAVBAR */
 .d-f{
     display: flex;
     flex-wrap: wrap;
@@ -9,12 +15,19 @@
 }
 .navbar{
     border-bottom: 2px solid black;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    margin-top: -10rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .navbar .nav{
     justify-content: space-between;
-    margin: 1rem 4rem;
+    margin: 0 4rem 1rem;
 }
+
 
 .navbar .nav .find a{
     text-decoration: none;
@@ -69,13 +82,120 @@
     margin-right: -300px;
 }
 
-@media (max-width : 1130px) {
-    .login{
-        visibility:collapse;
+
+.fa-compass{
+    font-size: 3rem;
+    color: #fe424d;
+}
+
+
+/* FOOTER */
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links , .f-info-socials , .f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-links a{
+    margin-right: 1rem;
+}
+.f-info-socials{
+    font-size: 1.5rem;
+}
+
+.f-info-socials i{
+    margin-right: 1rem;
+}
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    padding-top: 1rem;
+}
+
+/* INDEX PAGE */
+
+.heading{
+    margin-top: 10rem;
+    padding-left: 5rem;
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card img{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+}
+.row{
+    padding: 4rem;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    /* margin-right: 5rem; */
+}
+.row .card{
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+}
+
+.row .card .card-body .card-text{
+    text-align: center;  
+}
+
+.listing-link{
+    text-decoration: none;
+    color: black;
+}
+
+.card:hover{
+    .card-body p{
+        font-size: 150%;
     }
-    .hamburger-width{
-        margin-right: 2rem;
-        padding-top: 2rem;
-        font-size: larger;
+}
+
+@media(max-width : 566px){
+    .heading{
+        margin-top: 15rem;
     }
+    .navbar{
+        margin-top: -15rem;
+    }
+}
+
+
+/* HOME PAGE */
+
+.desc-home{
+    margin-top: 10rem;
+}
+
+
+.desc-show{
+    margin-top: 10rem;
+}
+
+
+.desc-new{
+    margin-top: 10rem;
+}
+
+.desc-edit{
+    margin-top: 10rem;
 }

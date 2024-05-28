@@ -30,6 +30,8 @@ app.listen(port, () =>{
     console.log(`App is Listening to port no ${port}`);
 });
 
+//Home page
+
 app.get("/", async(req,res) =>{
     // res.send("Welcome to WanderLust")
     // const allListings = await Listing.find();
@@ -49,7 +51,7 @@ app.get("/", async(req,res) =>{
 // });
 
 
-// Home page
+// All Listings
 
 app.get("/listings",async (req,res) =>{
     const allListings = await Listing.find();
