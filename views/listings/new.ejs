@@ -1,25 +1,51 @@
 <% layout("/layouts/boilerplate") %>
-<body>
+<body class="new-body d-f">
     <div class="desc-new">
-        <h2>Create a New Listing</h2>
-        <form action="/listings" method="post">
-            <label for="title">Enter Listing Title</label>
-            <input type="text" name="listing[title]" id="title" placeholder="Enter Title" required>
-            <br><br>
-            <label for="description">Description</label><br>
-            <textarea name="listing[description]" id="description" cols="30" rows="10" required></textarea>
-            <br><br>
-            <label for="img">Enter image Link</label>
-            <input type="text" name="listing[img]" id="img" placeholder="image link here">
-            <label for="price">Enter Price</label>
-            <input type="number" name="listing[price]" id="price" placeholder="Enter price" required>
-            <br><br>
-            <label for="location">Enter location</label>
-            <input type="text" name="listing[location]" id="location" placeholder="location" required>
-            <label for="country">Enter Country</label>
-            <input type="text" name="listing[country]" id="country" placeholder="Enter country" required>
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
+        <div class="edit-heading"><h2>CREATE NEW LISTING</h2></div>
+        <div class="new-form d-f">
+            <form action="/listings" method="post" class="needs-validation d-f" novalidate>
+                <div class="title d-f">
+                    <label for="title" class="form-label">Enter Listing Title</label>
+                    <input type="text" class="form-control"  name="listing[title]" id="title" placeholder="Enter Title" required>
+                    <div class="valid-feedback"> Looks good! </div>
+                </div>
+                <div class="description d-f">
+                    <label for="description" class="form-label">Description</label><br> <br>
+                    <textarea name="listing[description]"  class="form-control" id="description" cols="70" rows="3" required></textarea>
+                    <div class="valid-feedback"> A good description is always appreciated </div>
+                </div>
+                <div class="new-img">
+                    <label for="img" class="form-label">Enter image Link</label>
+                    <input type="text" name="listing[img]"  class="form-control" id="img" placeholder="image link here">
+                </div>
+                <div class="price-location">
+                    <div class="price-new d-b">
+                        <label for="price" class="form-label">Enter Price</label>
+                        <input type="number" name="listing[price]"  class="form-control" id="price" placeholder="Enter price" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Price.
+                        </div>
+                    </div>
+                    <div class="new-location d-b">
+                        <label for="location" class="form-label">Enter location</label>
+                        <input type="text" name="listing[location]" class="form-control"  id="location" placeholder="location" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid location.
+                        </div>
+                    </div>
+                </div>
+                <div class="new-country">
+                    <label for="country" class="form-label">Enter Country</label>
+                    <input type="text" name="listing[country]"  class="form-control" id="country" placeholder="Enter country" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid Country.
+                    </div>
+                </div>
+                <div class="btn-new-page d-f">
+                    <button type="submit">CREATE LISTING</button>
+                </div>
+            </form>
+        </div>
     </div>
+    <script src="/js/script.js"></script>
 </body>

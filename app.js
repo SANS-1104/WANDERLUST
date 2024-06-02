@@ -8,9 +8,9 @@ const ejsMate = require("ejs-mate");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.static (path.join(__dirname,"public")));
-app.use(express.urlencoded({extended : true}));
-app.use(methodOverride("_method"));
+app.use(express.static (path.join(__dirname,"public")));  // MIDDLEWARE
+app.use(express.urlencoded({extended : true}));  // MIDDLEWARE
+app.use(methodOverride("_method"));  // MIDDLEWARE
 app.engine('ejs', ejsMate);
 
 
@@ -88,10 +88,15 @@ app.get("/listings-new",(req,res)=>{
 
 //submiting the listing after creating it
 
-app.post("/listings" , async(req,res) =>{
-    const newListing = new Listing(req.body.listing);
-    await newListing.save();
-    res.redirect("/listings");
+app.post("/listings" , async(req,res,next) =>{
+    try{
+        const newListing = new Listing(req.body.listing);
+        await newListing.save();
+        res.redirect("/listings");
+    }catch(err){
+        next(err);
+    }
+    
 });
 
 //Getting to the editing listing page
@@ -116,4 +121,9 @@ app.delete("/listings/:id", async (req,res) =>{
     let {id} = req.params;
     await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
+});
+
+// server side authentication
+app.use((err,req,res,next)=>{
+    res.send("OOPS!! SOMETHING WENT WRONG");
 });

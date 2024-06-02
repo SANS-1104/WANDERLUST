@@ -4,24 +4,21 @@
         <button type="submit">Create New Listing</button>
     </form> -->
 
-    <div class="heading"><h2>All Listings</h2></div>
-
-    <div class="row d-f">
-        <% for(let listing of allListings){%>
-            <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card" style="width: 20rem;">
-                    <img src="<%= listing.image %>" class="card-img-top" alt="...">
-                    <div class="card-img-overlay"></div>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <b> <%= listing.title %> </b><br>
-                        &#8377;<%=listing.price.toLocaleString("en-IN") %> / night
-                        </p>
-                    </div>
+    <div class="heading"><h2>ALL LISTINGS</h2></div>
+    <div class="cont-idx">
+        <div class="listing-display-idx d-f">
+            <% for(let listing of allListings){%>
+                <div class="each-card-idx">
+                        <a href="/listings/<%= listing._id %>">
+                            <img src="<%= listing.image %>" alt="...">
+                            <h3><b> <%= listing.title %> </b></h3>
+                            <p>&#8377;<%=listing.price.toLocaleString("en-IN") %> / night</p>
+                        </a>
                 </div>
-            </a>
-        <%}%>
+            <%}%> 
+        </div>
     </div>
+
 </body>
 
 

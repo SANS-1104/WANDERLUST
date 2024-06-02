@@ -1,20 +1,29 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-    <div class="desc-show">
-        <h3>Listing Details</h3>
-        <ol>
-            <li><%=x.title %></li>
-            <li><%=x.description %></li>
-            <li>&#8377;<%=x.price.toLocaleString("en-IN") %></li>
-            <li><%=x.location %></li>
-            <li><%=x.country %></li>
-            <br>
-            <a href="/listings/<%=x._id %>/edit">Edit This Listing</a> 
-            <a href="/listings">Go to All Listings</a><br><br>
-            <form action="/listings/<%= x._id %>?_method=DELETE" method="post">
-                <button type="submit">Delete This Listing</button>
-            </form>
-        </ol>
+    <div class="desc-show d-f">
+        <div class="show-heading"><h3>Listing Details</h3></div>
+
+        <div class="card show-content" style="width: 43rem; border: none;">
+            <img src="<%=x.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%=x.title %></h5>
+              <p class="card-text"><%=x.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Price : &#8377;<%=x.price.toLocaleString("en-IN") %></li>
+              <li class="list-group-item">Location : <%=x.location %></li>
+              <li class="list-group-item">Country : <%=x.country %></li>
+            </ul>
+            <div class="card-body">
+                <a href="/listings/<%=x._id %>/edit" class="card-link">Edit This Listing</a>
+                <a href="/listings" class="card-link">Go to All Listings</a>
+                <form action="/listings/<%= x._id %>?_method=DELETE" method="post">
+                    <button type="submit">Delete This Listing</button>
+                </form>
+            </div>
+          </div>
+            
+        </div>
     </div>
     
 </body>

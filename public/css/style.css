@@ -1,6 +1,12 @@
 body{
     overflow-x:hidden;
-    font-family: "Plus Jakarta Sans", sans-serif;;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
 }
 
 /* NAVBAR */
@@ -8,8 +14,11 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+.d-b{
+    display: inline-block;
+}
 
-.navbar .nav .logo img{
+/* .navbar .nav .logo img{
     width: 15rem;
     height: 3rem;
 }
@@ -18,7 +27,8 @@ body{
     position: fixed;
     background-color: white;
     width: 100%;
-    margin-top: -10rem;
+    margin-top: -1rem;
+    margin-left: -1rem;
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
@@ -47,6 +57,7 @@ body{
     width: fit-content;
     padding: 1rem;
     border-radius: 4rem;
+    font-weight: bold;
 }
 .login{
     justify-content: space-evenly;
@@ -80,7 +91,7 @@ body{
 }
 .hamburger-width{
     margin-right: -300px;
-}
+} */
 
 
 .fa-compass{
@@ -95,7 +106,9 @@ body{
     text-decoration: none;
     color: #222;
 }
-
+footer{
+    width: 100%;
+}
 .f-info-links a:hover{
     text-decoration: underline;
 }
@@ -125,31 +138,67 @@ body{
     justify-content: center;
     align-items: space-evenly;
     padding-top: 1rem;
+    width: 100%;
 }
 
 /* INDEX PAGE */
-
-.heading{
-    margin-top: 10rem;
+.cont-idx{
+    justify-content: space-between;
+    align-items: center;
+}
+.listing-display-idx{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.each-card-idx{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25rem;
+    height: 30rem;
+    border-radius: 2rem;
+    margin-right: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+.each-card-idx a {
+    text-decoration: none;
+    color: black;
+}
+.each-card-idx a img{
+    width: 25rem;
+    height: 20rem;
+    border-radius: 2rem;
+}
+.each-card-idx a h3, .each-card-idx a p{
+    text-align: center;
+}
+ .heading h2{
+    font-family: "Seymour One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 8rem;
     padding-left: 5rem;
-    font-size: 2rem;
+    font-size: 3rem;
     display: flex;
     flex-wrap: wrap;
 }
-
+/*
 .card img{
     width: 20rem;
     height: 20rem;
     border-radius: 2rem;
 }
 .row{
+    display: flex !important;
+    flex-wrap: wrap !important;
     padding: 4rem;
-    width: 85%;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
     margin-left: 5rem;
-    /* margin-right: 5rem; */
-}
+    margin-right: 5rem;
+/* }
 .row .card{
     margin-right: 4rem;
     margin-bottom: 4rem;
@@ -162,40 +211,204 @@ body{
 .listing-link{
     text-decoration: none;
     color: black;
+    width: fit-content;
 }
 
 .card:hover{
-    .card-body p{
+    .card-body-index p{
         font-size: 150%;
-    }
+    } 
+} */
+
+
+/* HOME PAGE */
+
+.desc-home{
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 45rem;
+}
+.body-home{
+    overflow-y: hidden;
+}
+.outer-home-body{
+    background-image: url("../images/backgroundImage.avif");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.desc-home h2{
+    margin-top: -7rem;
+    font-size: 8rem;
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(126, 22, 22);
 }
 
-@media(max-width : 566px){
+
+/* SHOW PAGE */
+.desc-show{
+    margin-top: 10rem;
+}
+
+.show-content{
+    margin-left: 25%;
+}
+.show-heading h3{
+    display: flex;
+    flex-wrap: wrap;
+}
+.show-heading {
+    margin-left: 10%;
+    border: 2px solid black;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    width: max-content;
+    height: fit-content;
+    margin-bottom: 4rem;
+}
+
+.desc-show .show-content img{
+    width: 40vw;
+    height: 35vh;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    border-radius: 2rem;
+}
+.show-content .card-body{
+    text-align: center;
+    width: 40vw;
+}
+.show-content .card-body .card-title{
+    font-size: 2rem;
+}
+.show-content .card-body .card-text{
+    font-size: 1.5rem;
+}
+
+.show-content .list-group li{
+    font-size: 1.2rem;
+}
+
+.show-content .card-body a{
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: rebeccapurple;
+    font-weight: bold ;
+    margin-right: 5rem;
+}
+.show-content .card-body form button{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 4px solid black;
+    border-radius: 1rem;
+    background-color: rgb(252, 145, 145);
+}
+
+/* NEW LISTING PAGE */
+
+.desc-new{
+    margin-top: 5rem;
+    /* margin-left: 20%; */
+    /* margin-right: 20%; */
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    /* border: 3px dotted black; */
+    padding-left: 6rem;
+    padding-right: 6rem;
+    /* padding-top: 2rem; */
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+}
+.desc-new form .title input{
+    width: 100%;
+}
+
+.desc-new form input , .desc-new form textarea{
+    margin-right: 4rem;
+    margin-left: 1rem;
+    border: 2px solid black;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+.price-location .price-new{
+    margin-right: 3rem;
+}
+.desc-new form div{
+    margin-bottom: 1rem;
+}
+.new-form form{
+    flex-direction: column;
+}
+.desc-new h2{
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.desc-new form label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.desc-new form button{
+    font-size: 1.2rem;
+    border: 3px solid black;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: rgb(152, 240, 152);
+    width: 50%;
+    
+}
+.btn-new-page{
+    justify-content: center;
+    text-align: center ;
+}
+/* EDIT PAGE */
+.desc-edit{
+    margin-top: 5rem;
+}
+.edit-heading{
+    /* border: 2px solid black; */
+    border-radius: 1rem;
+    font-size: 2rem;
+    margin-left: 2%;
+    /* padding: 1rem; */
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 4rem;
+}
+.edit-heading h2{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.edit-data{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color:rebeccapurple;
+}
+/* @media(max-width : 566px){
     .heading{
         margin-top: 15rem;
     }
     .navbar{
         margin-top: -15rem;
     }
-}
-
-
-/* HOME PAGE */
-
-.desc-home{
-    margin-top: 10rem;
-}
-
-
-.desc-show{
-    margin-top: 10rem;
-}
-
-
-.desc-new{
-    margin-top: 10rem;
-}
-
-.desc-edit{
-    margin-top: 10rem;
-}
+    .desc-new h2{
+        padding-top: 5rem;
+    }
+} */
