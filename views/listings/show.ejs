@@ -18,12 +18,12 @@
                 <a href="/listings/<%=x._id %>/edit" class="card-link">Edit This Listing</a>
                 <a href="/listings" class="card-link">Go to All Listings</a>
                 <form action="/listings/<%= x._id %>?_method=DELETE" method="post">
-                    <button type="submit">Delete This Listing</button>
+                    <button type="submit" onclick="deleteListingAlert()">Delete This Listing</button>
                 </form>
             </div>
           </div>
             
         </div>
     </div>
-    
+    <script src="/js/alerts.js"></script>    
 </body>

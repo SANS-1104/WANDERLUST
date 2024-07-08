@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require('./utils/wrapAsync');
 const expressError = require('./utils/expressError');
+const {listingSchema} = require('./schema');
+
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -49,6 +51,12 @@ app.get("/", async(req,res) =>{
 // });
 
 
+const validateListing = (req,res,next)=>{
+    let {error} = listingSchema.validate(req.body);
+    if(error) throw new ExpressError(400,error);
+    else next();
+}
+
 // All Listings
 
 app.get("/listings",wrapAsync(async (req,res) =>{
@@ -80,10 +88,8 @@ app.get("/listings-new",wrapAsync((req,res)=>{
 
 //submiting the listing after creating it
 
-app.post("/listings" , wrapAsync(async(req,res,next) =>{
-    if(!req.body.listing){
-        throw new expressError(400,"Please Send a Valid Data");
-    }
+app.post("/listings" ,validateListing, wrapAsync(async(req,res,next) =>{
+    
     const newListing = new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
@@ -99,7 +105,7 @@ app.get("/listings/:id/edit",wrapAsync(async (req,res)=>{
 
 //submiting the listing after editing it
 
-app.put("/listings/:id",wrapAsync(async (req,res) =>{
+app.put("/listings/:id",validateListing,wrapAsync(async (req,res) =>{
      if(!req.body.listing){
         throw new expressError(400,"Please Send a Valid Data");
     }
